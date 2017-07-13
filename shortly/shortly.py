@@ -24,9 +24,7 @@ class Shortly(object):
     """
     def wsgi_app(self, environ, start_response):
         request = Request(environ)
-        print(request)
         response = self.dispatch_request(request)
-        print(response)
         return response(environ, start_response)
 
     def __call__(self, environ, start_response):
